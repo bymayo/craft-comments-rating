@@ -17,8 +17,14 @@ class CommentsRatingVariable
 {
     /**
      */
-    public function exampleVariable($optional = null)
+    public function elementRating($elementId)
     {
-        return "And away we go to the Twig template...";
+        return craft()->commentsRating->elementRating($elementId);
     }
+    
+    public function commentRating($commentId)
+    {
+        return craft()->commentsRating->commentRating($commentId);
+    }
+    
 }

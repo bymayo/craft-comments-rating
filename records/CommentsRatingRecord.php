@@ -20,7 +20,7 @@ class CommentsRatingRecord extends BaseRecord
      */
     public function getTableName()
     {
-        return 'commentsrating';
+        return 'comments_rating';
     }
 
     /**
@@ -30,7 +30,10 @@ class CommentsRatingRecord extends BaseRecord
    protected function defineAttributes()
     {
         return array(
-            'someField'     => array(AttributeType::String, 'default' => ''),
+            'commentId' => array(AttributeType::Number),
+            'elementId' => array(AttributeType::Number),
+            'userId' => array(AttributeType::Number),
+            'rating' => array(AttributeType::Number)
         );
     }
 

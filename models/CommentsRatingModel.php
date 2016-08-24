@@ -21,7 +21,10 @@ class CommentsRatingModel extends BaseModel
     protected function defineAttributes()
     {
         return array_merge(parent::defineAttributes(), array(
-            'someField'     => array(AttributeType::String, 'default' => 'some value'),
+            'commentId' => array(AttributeType::Number),
+            'elementId' => array(AttributeType::Number),
+            'userId' => array(AttributeType::Number),
+            'rating' => array(AttributeType::Number)
         ));
     }
 
