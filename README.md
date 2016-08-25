@@ -1,43 +1,71 @@
-# Comments Rating plugin for Craft CMS
+<img src="https://github.com/madebyshape/comments-rating/raw/master/screenshots/icon.png" width="50">
 
-Adds star rating functionality to Engram Design&#39;s -  Comments plugin
+# Comments Rating :star:
 
-![Screenshot](resources/screenshots/plugin_logo.png)
+Comments Rating extends the functionality of Engram Design's Comments plugin :fire::100: (https://github.com/engram-design/Comments) by adding the ability to store a rating per comment.
 
-## Installation
+You can also output the average rating of an element and output the rating per comment.
 
-To install Comments Rating, follow these steps:
+## Install
 
-1. Download & unzip the file and place the `commentsrating` directory into your `craft/plugins` directory
-2.  -OR- do a `git clone https://github.com/bymayo/commentsrating.git` directly into your `craft/plugins` folder.  You can then update it with `git pull`
-3.  -OR- install with Composer via `composer require bymayo/commentsrating`
-4. Install plugin in the Craft Control Panel under Settings > Plugins
-5. The plugin folder should be named `commentsrating` for Craft to see it.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
+### IMPORTANT
 
-Comments Rating works on Craft 2.4.x and Craft 2.5.x.
+You must have the Comments plugin installed to use this plugin. Download it from https://github.com/engram-design/Comments
 
-## Comments Rating Overview
+- Add the `commentsrating` directory into your `craft/plugins` directory.
+- Navigate to Settings -> Plugins and click the "Install" button.
 
--Insert text here-
+## Templating
 
-## Configuring Comments Rating
+### Get Rating
 
--Insert text here-
+To get the rating for a comment you first need to be using the `form.html` Template Override (https://github.com/engram-design/Comments/wiki/04.-Template-Overrides) provided by Comments. Then you just need to add the `<select>` inside the `<form>` tag of the comment
 
-## Using Comments Rating
+```HTML
+	<form method="post" action="" accept-charset="UTF-8">
+	
+		...
+		
+		<label>Rating</label>
+		<select name="fields[commentsRating]">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		
+		...
+		
+	</form>
+	
+```
 
--Insert text here-
+### Comment Rating
 
-## Comments Rating Roadmap
+To output the rating for a particular comment you again need to be using the `comment.html` Template Override (https://github.com/engram-design/Comments/wiki/04.-Template-Overrides) provided by Comments.
 
-Some things to do, and ideas for potential features:
+Then just pass the comment ID to the variable -
 
-* Release it
+```HTML
+	{{ craft.commentsrating.commentRating(comment.id) }}
+```
 
-## Comments Rating Changelog
+### Element Rating Average
 
-### 1.0.0 -- 2016.08.23
+To output the average rating for an element, simply pass the element ID to the variable - 
 
-* Initial release
+```HTML
+	{{ craft.commentsrating.elementRating(entry.id) }}
+```
 
-Brought to you by [Jason Mayo](bymayo.co.uk)
+### Outputting Stars
+
+Because this is a basic 'Extend' of a plugin that exists I haven't gone full out with the features! So outputting stars etc will need to be done via your own TWIG files and CSS. See the `examples` folder in the repo for a basic TWIG snippet.
+
+## Roadmap
+
+- Allow half rating average
+- Variable to output star rating
+- Variable to output the select menu
+- Setting to set the amount a rating should go up to

@@ -1,0 +1,22 @@
+{% set averageRating = craft.commentsrating.elementRating(entry.id) %}
+{% set averageRatingBlank = 5 - averageRating %}
+
+{% if averageRating > '0' %}
+
+    {% for star in 1..averageRating %}
+
+        <div class="icon-star is-active"></div>
+    
+    {% endfor %}
+    
+    {% if averageRating < 5 %}
+        
+        {% for star in 1..averageRatingBlank %}
+            
+            <div class="icon-star"></div>
+        
+        {% endfor %}
+    
+    {% endif %}
+
+{% endif %}
