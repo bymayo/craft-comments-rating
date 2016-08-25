@@ -2,13 +2,9 @@
 /**
  * Comments Rating plugin for Craft CMS
  *
- * CommentsRating Service
- *
- * @author    Jason Mayo
- * @copyright Copyright (c) 2016 Jason Mayo
- * @link      bymayo.co.uk
- * @package   CommentsRating
- * @since     1.0.0
+ * @author    	Jason Mayo
+ * @twitter 	@madebymayo
+ * @package   	CommentsRating
  */
 
 namespace Craft;
@@ -16,6 +12,11 @@ namespace Craft;
 class CommentsRatingService extends BaseApplicationComponent
 {
 
+	/**
+	 * Rating - Create
+	 *
+	 * @return null
+	*/
     public function createRating($comment)
     {
 	    
@@ -31,6 +32,11 @@ class CommentsRatingService extends BaseApplicationComponent
 	    
     }
     
+	/**
+	 * Rating - Element
+	 *
+	 * @return integer
+	*/
     public function elementRating($elementId)
     {
 	    
@@ -44,6 +50,11 @@ class CommentsRatingService extends BaseApplicationComponent
 	    
     }
     
+	/**
+	 * Rating - Comment
+	 *
+	 * @return integer
+	*/
     public function commentRating($commentId)
     {
 	    

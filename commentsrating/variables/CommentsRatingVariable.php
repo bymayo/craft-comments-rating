@@ -2,26 +2,31 @@
 /**
  * Comments Rating plugin for Craft CMS
  *
- * Comments Rating Variable
- *
- * @author    Jason Mayo
- * @copyright Copyright (c) 2016 Jason Mayo
- * @link      bymayo.co.uk
- * @package   CommentsRating
- * @since     1.0.0
+ * @author    	Jason Mayo
+ * @twitter 	@madebymayo
+ * @package   	CommentsRating
  */
 
 namespace Craft;
 
 class CommentsRatingVariable
 {
-    /**
-     */
+	
+	/**
+	 * Rating - Element
+	 *
+	 * @return integer
+	*/
     public function elementRating($elementId)
     {
         return craft()->commentsRating->elementRating($elementId);
     }
     
+	/**
+	 * Rating - Comment
+	 *
+	 * @return integer
+	*/
     public function commentRating($commentId)
     {
         return craft()->commentsRating->commentRating($commentId);
