@@ -22,23 +22,22 @@ You must have the Comments plugin installed to use this plugin. Download it from
 To get the rating for a comment you first need to be using the `form.html` Template Override (https://github.com/engram-design/Comments/wiki/04.-Template-Overrides) provided by Comments. Then you just need to add the `<select>` inside the `<form>` tag of the comment
 
 ```HTML
-	<form method="post" action="" accept-charset="UTF-8">
+<form method="post" action="" accept-charset="UTF-8">
+
+	...
 	
-		...
-		
-		<label>Rating</label>
-		<select name="fields[commentsRating]">
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-		</select>
-		
-		...
-		
-	</form>
+	<label>Rating</label>
+	<select name="fields[commentsRating]">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
 	
+	...
+	
+</form>
 ```
 
 ### Comment Rating
@@ -48,7 +47,7 @@ To output the rating for a particular comment you again need to be using the `co
 Then just pass the comment ID to the variable -
 
 ```HTML
-	{{ craft.commentsrating.commentRating(comment.id) }}
+{{ craft.commentsrating.commentRating(comment.id) }}
 ```
 
 ### Element Rating Average
@@ -56,7 +55,7 @@ Then just pass the comment ID to the variable -
 To output the average rating for an element, simply pass the element ID to the variable - 
 
 ```HTML
-	{{ craft.commentsrating.elementRating(entry.id) }}
+{{ craft.commentsrating.elementRating(entry.id) }}
 ```
 
 ### Outputting Stars
