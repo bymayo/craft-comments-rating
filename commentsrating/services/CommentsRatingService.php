@@ -46,7 +46,7 @@ class CommentsRatingService extends BaseApplicationComponent
 			->where('elementId=' . $elementId)
 			->queryAll();
 		
-		return round($query[0]['average']);
+		return (count($query) == 0) ? 0 : round($query[0]['average']);
 	    
     }
     
@@ -64,7 +64,7 @@ class CommentsRatingService extends BaseApplicationComponent
 			->where('commentId=' . $commentId)
 			->queryAll();
 		
-		return $query[0]['rating'];
+		return (count($query) == 0) ? 0 : $query[0]['rating']);
 	    
     }
 

@@ -1,8 +1,17 @@
 [
+	{
+        "version": "1.0.0",
+        "downloadUrl": "https://github.com/madebyshape/comments-rating/archive/master.zip",
+        "date": "2016-08-26T10:00:00-08:00",
+        "notes": [
+            "[Fixed] Fixed Master, README and Releases URL's to Github files",
+            "[Fixed] If no rating was found it errored. Now outputs 0",
+        ]
+    },
     {
         "version": "1.0.0",
-        "downloadUrl": "https://github.com/bymayo/commentsrating/archive/master.zip",
-        "date": "2016-08-23T20:45:20.514Z",
+        "downloadUrl": "https://github.com/madebyshape/comments-rating/archive/master.zip",
+        "date": "2016-08-25T10:00:00-08:00",
         "notes": [
             "[Added] Initial release"
         ]
