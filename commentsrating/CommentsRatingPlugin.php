@@ -34,12 +34,12 @@ class CommentsRatingPlugin extends BasePlugin
     
     public function getDocumentationUrl()
     {
-        return 'https://github.com/bymayo/commentsrating/blob/master/README.md';
+        return 'https://raw.githubusercontent.com/madebyshape/comments-rating/master/README.md';
     }
 
     public function getReleaseFeedUrl()
     {
-        return 'https://raw.githubusercontent.com/bymayo/commentsrating/master/releases.json';
+        return 'https://raw.githubusercontent.com/madebyshape/comments-rating/master/releases.json';
     }
 
     public function getVersion()
