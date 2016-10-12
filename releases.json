@@ -1,11 +1,20 @@
 [
 	{
-        "version": "1.0.0",
+        "version": "1.0.2",
+        "downloadUrl": "https://github.com/madebyshape/comments-rating/archive/master.zip",
+        "date": "2016-08-26T10:00:00-08:00",
+        "notes": [
+            "[Fixed] PHP error caused by spelling mistake on POST, from field",
+            "[Fixed] Rogue bracket on the output of a commentRating var"
+        ]
+    },
+	{
+        "version": "1.0.1",
         "downloadUrl": "https://github.com/madebyshape/comments-rating/archive/master.zip",
         "date": "2016-08-26T10:00:00-08:00",
         "notes": [
             "[Fixed] Fixed Master, README and Releases URL's to Github files",
-            "[Fixed] If no rating was found it errored. Now outputs 0",
+            "[Fixed] If no rating was found it errored. Now outputs 0"
         ]
     },
     {
