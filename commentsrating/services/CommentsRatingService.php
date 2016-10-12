@@ -24,7 +24,7 @@ class CommentsRatingService extends BaseApplicationComponent
 	    $model->commentId = $comment->id;
 	    $model->elementId = $comment->elementId;
 	    $model->userId = $comment->userId;
-	    $model->rating = craft()->request->getPost('fields.commentRating');
+	    $model->rating = craft()->request->getPost('fields.commentsRating');
 	    
 		$commentRatingRecord = new CommentsRatingRecord;
 		$commentRatingRecord->setAttributes($model->getAttributes());
@@ -64,7 +64,7 @@ class CommentsRatingService extends BaseApplicationComponent
 			->where('commentId=' . $commentId)
 			->queryAll();
 		
-		return (count($query) == 0) ? 0 : $query[0]['rating']);
+		return (count($query) == 0) ? 0 : $query[0]['rating'];
 	    
     }
 
