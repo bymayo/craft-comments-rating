@@ -1,5 +1,13 @@
 [
 	{
+        "version": "1.0.3",
+        "downloadUrl": "https://github.com/madebyshape/comments-rating/archive/master.zip",
+        "date": "2017-08-22T10:00:00-08:00",
+        "notes": [
+            "[Added] When a comment is deleted, also remove the rating assigned to it"
+        ]
+    },
+	{
         "version": "1.0.2",
         "downloadUrl": "https://github.com/madebyshape/comments-rating/archive/master.zip",
         "date": "2016-08-26T10:00:00-08:00",

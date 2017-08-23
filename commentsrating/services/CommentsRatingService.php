@@ -33,6 +33,26 @@ class CommentsRatingService extends BaseApplicationComponent
     }
     
 	/**
+	 * Rating - Delete
+	 *
+	 * @return null
+	*/
+    public function deleteRating($comment)
+    {
+	    
+        $commentRatingRecord = CommentsRatingRecord::model()->findByAttributes(
+				array(
+					'commentId' => $comment->id
+				)
+			);
+        						
+        if ($commentRatingRecord) {
+			$commentRatingRecord->delete();
+        }
+	    
+    }    
+    
+	/**
 	 * Rating - Element
 	 *
 	 * @return integer

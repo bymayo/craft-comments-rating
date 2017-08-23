@@ -19,6 +19,11 @@ class CommentsRatingPlugin extends BasePlugin
 		    $comment = $event->params['comment'];
 		    craft()->commentsRating->createRating($comment);
 		});
+		
+		craft()->on('comments.onTrashComment', function($event) {
+			$comment = $event->params['comment'];
+			craft()->commentsRating->deleteRating($comment);
+		});
 	    
     }
 
@@ -44,12 +49,12 @@ class CommentsRatingPlugin extends BasePlugin
 
     public function getVersion()
     {
-        return '1.0.2';
+        return '1.0.3';
     }
 
     public function getSchemaVersion()
     {
-        return '1.0.2';
+        return '1.0.3';
     }
 
     public function getDeveloper()
