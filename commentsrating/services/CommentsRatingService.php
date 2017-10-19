@@ -90,7 +90,6 @@ class CommentsRatingService extends BaseApplicationComponent
 			->where('elementId=' . $elementId)
 			->queryAll();
 		
-        //return (count($query) == 0) ? 0 : round($query[0]['average']);
 		return (count($query) == 0) ? 0 : round($query[0]['average'] *2) / 2;
 	    
     }
