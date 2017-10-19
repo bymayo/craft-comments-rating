@@ -19,17 +19,41 @@ class CommentsRatingService extends BaseApplicationComponent
 	*/
     public function createRating($comment)
     {
+        $commentRatingRecord = CommentsRatingRecord::model()->findByAttributes(
+            array(
+                'commentId' => $comment->id
+            )
+        );
+                            
+        if ($commentRatingRecord) {
+            $this->updateRating($comment, $commentRatingRecord);
+        }
+        else
+        {
+            $model = new CommentsRatingModel();
+            $model->commentId = $comment->id;
+            $model->elementId = $comment->elementId;
+            $model->userId = $comment->userId;
+            $model->rating = craft()->request->getPost('fields.commentsRating');
+            
+            $commentRatingRecord = new CommentsRatingRecord;
+            $commentRatingRecord->setAttributes($model->getAttributes());
+            $commentRatingRecord->save();
+        }
+        
+    }
+
+    /**
+	 * Rating - Update
+	 *
+	 * @return null
+	*/
+    public function updateRating($comment, $commentRatingRecord)
+    {
 	    
-        $model = new CommentsRatingModel();
-	    $model->commentId = $comment->id;
-	    $model->elementId = $comment->elementId;
-	    $model->userId = $comment->userId;
-	    $model->rating = craft()->request->getPost('fields.commentsRating');
-	    
-		$commentRatingRecord = new CommentsRatingRecord;
-		$commentRatingRecord->setAttributes($model->getAttributes());
-		$commentRatingRecord->save();
-	    
+		$commentRatingRecord->rating = craft()->request->getPost('fields.commentsRating');
+        $commentRatingRecord->save();
+        
     }
     
 	/**
@@ -66,7 +90,8 @@ class CommentsRatingService extends BaseApplicationComponent
 			->where('elementId=' . $elementId)
 			->queryAll();
 		
-		return (count($query) == 0) ? 0 : round($query[0]['average']);
+        //return (count($query) == 0) ? 0 : round($query[0]['average']);
+		return (count($query) == 0) ? 0 : round($query[0]['average'] *2) / 2;
 	    
     }
     
