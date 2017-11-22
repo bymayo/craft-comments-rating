@@ -1,4 +1,4 @@
-<img src="https://github.com/madebyshape/comments-rating/raw/master/screenshots/icon.png" width="50">
+<img src="https://github.com/bymayo/comments-rating/raw/master/screenshots/icon.png" width="50">
 
 # Comments Rating :star:
 
