@@ -1,6 +1,8 @@
+> ⚠️ This repo is not under active development and will not be moved to Craft 3.x. ⚠️
+
 <img src="https://github.com/bymayo/comments-rating/raw/master/screenshots/icon.png" width="50">
 
-# Comments Rating :star:
+# Comments Rating for Craft 2.x :star:
 
 Comments Rating extends the functionality of Engram Design's Comments plugin :fire::100: (https://github.com/engram-design/Comments) by adding the ability to store a rating per comment.
 
